@@ -1,0 +1,37 @@
+  <style type="text/css">
+    .notify{
+      position:absolute;
+      top:0px;
+      left: 0px;
+      width:100%;
+      height:0;
+      box-sizing:border-box;
+      color:white;
+      text-align:center;
+      background:rgb(24, 199, 199);
+      overflow:hidden;
+      box-sizing:border-box;
+      transition:height .2s;
+    }
+    #election-reminder-message{
+      display:block;
+      margin-top:15px;
+    }
+    .election-reminder-link {
+      color: {{ linkColor }};
+    }
+    .active{
+      height:50px;
+    }
+  </style>
+  <div id="election-reminder" class="notify">
+    <h2 class="election-reminder-message">Election Day is Tuesday, 11/3. <a class="election-reminder-link" href="https://vote.org" target="_blank">Find your polling place</a> and vote!</h2>
+  </div>
+  <script type="text/javascript">
+  if(Date.now() <= 1604462400000) {
+    document.getElementById("election-reminder").classList.add("active");
+    setTimeout(function(){
+      document.getElementById("electionReminder").classList.remove("active");
+    },4500);
+  }
+  </script>

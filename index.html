@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      .notify{
+        position:absolute;
+        display: table;
+        top:0px;
+        left: 0px;
+        width:100%;
+        box-sizing:border-box;
+        color:white;
+        text-align:center;
+        background:rgb(24, 199, 199);
+        overflow:hidden;
+        box-sizing:border-box;
+
+        height:0;
+        transition:height 1.2s;
+      }
+      .message{
+        vertical-align:middle
+        margin-top:15px;
+      }
+      .message_fullscreen{
+        display:table-cell;
+      }
+      .message__mobile{
+        display:none;
+      }
+      .link{
+        color: black;
+      }
+      .active{
+        height:50px;
+      }
+      @media only screen and (max-width: 600px) {
+        .message__mobile{
+          display:table-cell;
+        }
+        .message__fullscreen{
+          display:none;
+        }
+    </style>
+  </head>
+  <body>
+  <div id="election-reminder" class="notify">
+    <h2 class="message message__fullscreen">Election Day is Tuesday, 11/3. <a class="election-reminder-link" href="https://vote.org" target="_blank">Find your polling place</a> and vote!</h2>
+    <h2 class="message message__mobile">Election Day is 11/3. <a class="election-reminder-link" href="https://vote.org" target="_blank">VOTE</a>!</h2>
+  </div>
+  <script type="text/javascript">
+  if(Date.now() <= 1604462400000) {
+    document.getElementById("election-reminder").classList.add("active");
+/*    setTimeout(function(){
+      document.getElementById("election-reminder").classList.remove("active");
+    },4500);*/
+  }
+  </script>
+  </body>
+</html>
