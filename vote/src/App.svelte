@@ -40,6 +40,7 @@
 			<button on:click={copy} class="btn">Copy</button>
 		</div>
 		<textarea id="output" bind:value={electionReminder}></textarea>
+		<span style="font-size: 0.5em; padding-top: 0.5em;">The banner will be hidden after the 9pm PST Nov. 3rd, 2020</span>
 		<br/>
 
 	</div>
@@ -364,7 +365,7 @@
 	</h2>
 </div>
 <script>
-    // The popup will no longer be visible after the 9pm PST Nov. 3rd
+    // The banner will be hidden after the 9pm PST Nov. 3rd, 2020
     if(Date.now() <= 1604462400000) {
       document.getElementById("election-reminder").classList.add("active");
       setTimeout(function(){
