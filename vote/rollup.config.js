@@ -8,7 +8,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
 	let server;
-	
+
 	function toExit() {
 		if (server) server.kill(0);
 	}
@@ -43,7 +43,8 @@ export default {
 			// a separate file - better for performance
 			css: css => {
 				css.write('bundle.css');
-			}
+			},
+			customElement: true
 		}),
 
 		// If you have external dependencies installed from
