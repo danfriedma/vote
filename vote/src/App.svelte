@@ -22,7 +22,7 @@
 		<input class="font-color" type="color" bind:value={fontColor} defaultValue="#ffffff">
 	</div>
 
-	<div class="step">
+	<div class="step step-seconds">
 		<h2>Time before message dissappears</h2>
 		<input class="seconds" type="range" min="3" max="9" step="1" bind:value={seconds}>
 		<span>{seconds} seconds</span>
@@ -46,6 +46,7 @@
 
 	<div class="footer">
 		<span><a href="https://danielfriedman.space" target="_blank">Created by Daniel Friedman</a><span>
+		<br/>
 		<span><a href="https://paypal.me/danfriedma" target="_blank">Tip me on PayPal</a><span>
 		</div>
 </main>
@@ -55,7 +56,7 @@
 		padding: 1em;
 	}
 	.footer span {
-		padding: 1em;
+		margin: 0 auto;
 	}
 	.heading {
 		margin-top: 2em;
@@ -175,33 +176,6 @@
 	.wrapper button:hover {
 	  background: #f3a2b9;
 	}
-	.copy-success {
-	  position: fixed;
-	  bottom: -30px;
-	  left: 0;
-	  right: 0;
-	  width: 250px;
-	  margin: auto;
-	  padding: 12px;
-	  font-size: 14px;
-	  font-weight: 700;
-	  text-align: center;
-	  background: #fff;
-	  border-radius: 4px;
-	  box-shadow: 0 2px 4px 0 rgba(51, 51, 51, 0.03);
-	  z-index: 100;
-	  visibility: hidden;
-	}
-	.copy-success.visible {
-	  visibility: visible;
-	  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-	          animation: fadein 0.5s, fadeout 0.5s 2.5s;
-	  -webkit-animation-fill-mode: forwards;
-	          animation-fill-mode: forwards;
-	}
-	.success {
-
-	}
 	.success span {
 		width: 250px;
 		margin: auto;
@@ -255,6 +229,15 @@
 		}
 		.message__fullscreen {
 			display:none;
+		}
+		.step-seconds {
+			flex-direction: column;
+		}
+		.wrapper {
+			width: 250px;
+		}
+		.step h2 {
+			font-size: 0.5em;
 		}
 	}
 	@-webkit-keyframes fadein {
